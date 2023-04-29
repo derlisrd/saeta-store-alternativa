@@ -52,20 +52,26 @@ const DialogCambioPrecio = () => {
       <DialogTitle>Cambiar de precio</DialogTitle>
       <DialogContent>
         <Grid container spacing={2}>
-          <Grid item xs={12}>
-            <Typography variant="body1">
+          <Grid item xs={12} sm={6}>
+            <Typography variant="overline">
               Precio original: { valorConvertido(pr.precio_original)}{" "}
               {fd.datosMoneda.abreviatura_moneda}
             </Typography>
           </Grid>
-          <Grid item xs={12}>
-            <Typography variant="body1">
+          <Grid item xs={12} sm={6}>
+            <Typography variant="overline">
+              Precio credito: { valorConvertido(pr.precio_credito)}{" "}
+              {fd.datosMoneda.abreviatura_moneda}
+            </Typography>
+          </Grid>
+          <Grid item xs={12} sm={6}>
+            <Typography variant="overline">
               Precio mayorista: { valorConvertido(pr.preciom_producto)}{" "}
               {fd.datosMoneda.abreviatura_moneda}
             </Typography>
           </Grid>
-          <Grid item xs={12}>
-            <Typography variant="body1">
+          <Grid item xs={12} sm={6}>
+            <Typography variant="overline">
               Precio actual: { valorConvertido(pr.precio_guardado)}{" "}
               {fd.datosMoneda.abreviatura_moneda}
             </Typography>

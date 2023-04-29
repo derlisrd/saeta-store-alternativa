@@ -49,6 +49,7 @@ const ProductFormEditProvider = (props) => {
         costo_producto: "0",
         precio_producto: "0",
         preciom_producto: "0",
+        precio_credito:'0',
         minimo_producto: "0",
         porcentaje_comision:"0",
         preguntar_precio:"0",
@@ -202,7 +203,7 @@ const ProductFormEditProvider = (props) => {
         APICALLER.get({table:'productos_images',where:`id_image_producto,=,${id}`}),
         APICALLER.get({table: `productos`,where: `id_producto,=,${id}`,
         fields: `id_producto,id_unidad_medida_producto,codigo_producto,nombre_producto,descripcion_producto,id_categoria_producto,id_proveedor_producto,notificar_producto,
-        costo_producto,precio_producto,preciom_producto,id_impuesto_producto,tipo_producto,minimo_producto,id_marca_producto,porcentaje_comision,disponible_producto,preguntar_precio`
+        costo_producto,precio_producto,precio_credito,preciom_producto,id_impuesto_producto,tipo_producto,minimo_producto,id_marca_producto,porcentaje_comision,disponible_producto,preguntar_precio`
         })
       ])
 

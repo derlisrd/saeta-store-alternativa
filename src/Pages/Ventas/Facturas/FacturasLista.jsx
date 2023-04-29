@@ -129,7 +129,7 @@ const FacturasLista = () => {
   };
 
   const Acciones = ({ rowProps }) => (
-    <Stack direction="row" spacing={2}>
+    <Stack direction="row" spacing={1}>
       <Tooltip title="Devolucion" arrow>
       <IconButton onClick={() => {devolucion(rowProps);}}>
         <Icon>cancel</Icon>
@@ -153,7 +153,7 @@ const FacturasLista = () => {
   
 
   const search = (
-    <Grid container spacing={3}>
+    <Grid container spacing={1}>
       <Grid item xs={12} sm={6} md={3}  >
         <DatePickerCustom 
         fullWidth

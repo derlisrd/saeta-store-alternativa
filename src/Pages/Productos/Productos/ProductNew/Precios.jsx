@@ -107,6 +107,27 @@ const Precios = () => {
             />
           </Grid>
           <Grid item xs={12} sm={6} md={3}>
+            <TextField
+              fullWidth
+              onChange={change}
+              label="Precio Credito"
+              autoComplete="off"
+              name="precio_credito"
+              value={formulario.precio_credito}
+              InputProps={{
+                startAdornment: (
+                  <InputAdornment position="start">
+                    <Icon color="info">point_of_sale</Icon>
+                  </InputAdornment>
+                ),
+                inputProps: { min: 0 },
+                inputComponent: NumberFormatCustom,
+              }}
+              error={false}
+              helperText="Precio a credito"
+            />
+          </Grid>
+          <Grid item xs={12} sm={6} md={3}>
           <TextField
               fullWidth
               onChange={changePercent}

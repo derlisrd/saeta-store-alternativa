@@ -1,5 +1,4 @@
 import { Grid, Icon, InputAdornment, TextField,Checkbox,FormControlLabel, FormControl, InputLabel, Select, MenuItem, Tooltip, Switch } from "@mui/material";
-import React from "react";
 import NumberFormatCustom from "../../../../Components/thirty/NumberFormatCustom";
 import { useProductFormEdit } from "./ProductFormEditProvider";
 
@@ -22,7 +21,7 @@ const Precios = () => {
             />
             </Tooltip>
       </Grid>
-      <Grid item xs={12} sm={4} md={4}>
+      <Grid item xs={12} sm={3} md={3}>
             <TextField
               onChange={change}
               fullWidth
@@ -41,12 +40,11 @@ const Precios = () => {
                 inputComponent: NumberFormatCustom,
               }}
               
-              error={false}
               helperText="Costo del producto"
             />
           </Grid>
 
-          <Grid item xs={12} sm={4} md={4}>
+          <Grid item xs={12} sm={3}>
             <TextField
               fullWidth
               onChange={change}
@@ -63,13 +61,11 @@ const Precios = () => {
                 inputProps: { min: 0 },
                 inputComponent: NumberFormatCustom,
               }}
-              variant="outlined"
-              error={false}
               helperText="Precio del producto"
             />
           </Grid>
 
-          <Grid item xs={12} sm={4} md={4}>
+          <Grid item xs={12} sm={3}>
             <TextField
               fullWidth
               onChange={change}
@@ -91,7 +87,27 @@ const Precios = () => {
               helperText="Precio para mayoristas"
             />
           </Grid>
-          <Grid item xs={12} sm={4} md={4}>
+          <Grid item xs={12} sm={3}>
+            <TextField
+              fullWidth
+              onChange={change}
+              label="Precio Mayorista"
+              autoComplete="off"
+              name="precio_credito"
+              value={formulario.precio_credito}
+              InputProps={{
+                startAdornment: (
+                  <InputAdornment position="start">
+                    <Icon color="primary">point_of_sale</Icon>
+                  </InputAdornment>
+                ),
+                inputProps: { min: 0 },
+                inputComponent: NumberFormatCustom,
+              }}
+              helperText="Precio credito"
+            />
+          </Grid>
+          <Grid item xs={12} sm={3} >
             <FormControlLabel
               control={
                 <Checkbox

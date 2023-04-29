@@ -697,6 +697,7 @@ const VentasProvider = ({ children }) => {
       precio_guardado: parseFloat(prod.precio_producto),
       preciom_producto: parseFloat(prod.preciom_producto),
       precio_original: parseFloat(prod.precio_producto),
+      precio_credito: parseFloat(prod.precio_credito),
       cantidad_producto: cantidadInput,
       stock_producto: parseFloat(prod.stock_producto_deposito),
       iva_porcentaje: iva_porcent,
