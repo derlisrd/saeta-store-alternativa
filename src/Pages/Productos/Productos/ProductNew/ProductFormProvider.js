@@ -44,7 +44,7 @@ const ProductFormProvider = ({children}) => {
         costo_producto: "0",
         precio_producto: "0",
         preciom_producto: "0",
-        precio_credito:'0',
+        precio_credito:"0",
         minimo_producto: "0",
         porcentaje_comision: "0",
         stock_producto: "0",

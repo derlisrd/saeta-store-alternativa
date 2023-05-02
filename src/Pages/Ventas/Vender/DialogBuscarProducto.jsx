@@ -54,6 +54,7 @@ const DialogBuscarProducto = () => {
           }), APICALLER.get({table:'productos', include: "impuestos,productos_depositos",
           on: "id_impuesto_producto,id_impuesto,id_producto,id_producto_deposito",
           where:`id_deposito_deposito,=,${deposito},and,codigo_producto,='${codigo}'`})]);
+          //console.log(img,dep);
           if(img.response && img.found>0){
             if(cantidadInput<= parseFloat(dep.results[0].stock_producto_deposito) )
             {
@@ -98,7 +99,7 @@ const DialogBuscarProducto = () => {
             on: "id_impuesto_producto,id_impuesto",
             filtersField:"nombre_producto,codigo_producto",filtersSearch:search,pagesize:'20'
           })]) ;
-          //console.log('busca');
+          
           setListaBuscaProducto(res[0].results);
           setLoad(false)
         },1000)

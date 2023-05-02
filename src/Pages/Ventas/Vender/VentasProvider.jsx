@@ -348,7 +348,7 @@ const VentasProvider = ({ children }) => {
             id_items_factura: ID_FACTURA,
             id_impuesto_factura: e.id_impuesto,
             id_producto_factura: e.id_producto,
-            id_deposito_item: e.deposito_activo, ////////////////////**********************//////////////////////////////////
+            id_deposito_item: e.id_deposito_deposito ?? e.deposito_activo, ////////////////////**********************//////////////////////////////////
             cantidad_producto: e.cantidad_producto,
             precio_producto_factura: e.precio_guardado,
             porcentaje_comision_factura: e.porcentaje_comision,
@@ -659,6 +659,7 @@ const VentasProvider = ({ children }) => {
     
     
     if (res.response ) {
+      
       if (res.found > 0 || serv.found>0) {
         if(res.results[0]?.tipo_producto==="1" && res.results[0]?.stock_producto_deposito<=0 ){
           setErrors({...errors,error: true, mensaje: `No hay stock de ${res.results[0].nombre_producto} en el deposito`,
@@ -708,6 +709,7 @@ const VentasProvider = ({ children }) => {
       comision_producto: (subtotal * porcentaje_comision) / 100,
       id_productos_deposito: prod.id_productos_deposito,
       deposito_activo: df.depositoActivo,
+      id_deposito_deposito: prod.id_deposito_deposito,
       id_impuesto: prod.id_impuesto,
       id_producto: prod.id_producto,
       url_imagen: prod?.url_imagen ? prod.url_imagen : ""
@@ -848,7 +850,7 @@ const VentasProvider = ({ children }) => {
       return false;
     }
     let valorInicial = parseFloat(Funciones.ComaPorPunto(Funciones.SacarPunto(cantidadRecibidaRef.current.value)));
-    console.log(cantidadRecibidaRef.current.value,valorInicial);
+    //console.log(cantidadRecibidaRef.current.value,valorInicial);
     
     if(!isNaN(valorInicial) || valorInicial>0){
       let valor = valorInicial * parseFloat(fa.facturas[indexFactura].datosMoneda.valor_moneda);
@@ -972,9 +974,9 @@ const VentasProvider = ({ children }) => {
 
   const getDatosFactura = useCallback(async () => {
     //consultar si hay factura en localstore
-    console.log('render usecallback');
+    //console.log('render usecallback');
     if (localStorage.getItem("facturasStorage") === null) {
-      console.log('render local');
+      //console.log('render local');
       let [rCajas,rMoneda,rFormasPago,rVendedores,rDepositos,cajaMonedas,cajasOpened] = await Promise.all([
         APICALLER.get({table: "cajas",include:"cajas_users", on:"id_caja,id_caja_caja",where: `id_user_caja,=,${id_user}`}),
         APICALLER.get({ table: "monedas" }),
