@@ -15,6 +15,8 @@ export const StylesTabla = makeStyles((theme) => ({
   },
   tablecell: {
     position: "sticky",
+    padding:'8px',
+    textAlign:'center',
     zIndex: 1,
     transition:'all 0.2s linear',
   },
@@ -33,6 +35,9 @@ export const StylesTabla = makeStyles((theme) => ({
       display: "flex !important",
       justifyContent: "space-between",
     },
+    padding:'6px',
+    fontSize:'.8rem',
+    textAlign:'center'
   },
   columname: {
     display: "none",

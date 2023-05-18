@@ -1,0 +1,18 @@
+.div_print_ticket{
+    margin: 0 auto;
+    font-size: .85rem;
+}
+._tabledatos_ticket{
+    text-align: left;
+    font-size: .7rem;
+}
+._table_items_descripcion tr td{
+    padding: 0;
+}
+._tabla_items{
+    font-size: 0.75rem;   
+}
+
+._mensajito{
+    font-size: .6rem;
+}

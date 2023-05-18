@@ -2,10 +2,10 @@ import { TableCell, TableRow,Icon,IconButton,Typography,Stack, Tooltip } from "@
 import { useVentas } from "./VentasProvider";
 import VentasTablaOpciones from "./VentasTablaOpciones";
 import VentasTableVacio from "./VentasTableVacio";
-import { StylesTablaFacturaReponsive } from "../../../Components/UI/Tablas/StylesTablaFacturaReponsive";
+import { StylesTabla } from './StylesTabla';
 
 const VentasTablaItems = () => {
-  const classes = StylesTablaFacturaReponsive();
+  const classes = StylesTabla();
 
   const { datosFacturas, indexFactura,Funciones,restarCantidad,sumarCantidad } = useVentas();
 
@@ -30,7 +30,7 @@ const VentasTablaItems = () => {
               <span className={classes.columname}>CANT.</span>
               <span>
                 
-                <Stack direction="row">
+                <Stack direction="row" justifyContent='center'>
                   <Tooltip title="Restar 1">
                   <IconButton onClick={(e) => {restarCantidad(parseFloat(d.cantidad_producto), i)}}>
                     <Icon>remove_circle_outline</Icon>
